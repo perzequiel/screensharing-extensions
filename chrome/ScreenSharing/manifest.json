@@ -1,10 +1,10 @@
 {
-  "name" : "OpenTok Screen Sharing",
-  "author": "TokBox, Inc.",
-  "version" : "2.0",
+  "name" : "EduTailors Screen Sharing",
+  "author": "EduTailors",
+  "version" : "1.0",
   "manifest_version" : 2,
   "minimum_chrome_version": "34",
-  "description" : "This Chrome extension is developed primary for http://tokbox.com/. It doesn't do anything except capture content of your screen.",
+  "description" : "This Chrome extension is developed primary for http://tokbox.com/ and extended for https://www.edutailors.com/ to capture content of your screen.",
   "homepage_url": "http://tokbox.com/",
   "background": {
     "scripts": ["background-script.js"],
@@ -12,7 +12,7 @@
   },
   "externally_connectable": {
     "matches": [
-      "https://*.change-this-to-your-domain.com/*"
+      "https://www.edutailors.com/"
     ]
   },
   "icons": {

@@ -20,6 +20,8 @@ function getSourceID(sender, callback) {
 
     callback({ sourceId: sourceId });
   });
+
+  console.log('test');
 }
 
 chrome.runtime.onMessageExternal.addListener(function (message, sender, callback) {
@@ -34,3 +36,4 @@ chrome.runtime.onMessageExternal.addListener(function (message, sender, callback
     callback({ error: 'unsupportedMessage', type: message.type });
   }
 });
+

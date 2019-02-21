@@ -10,14 +10,14 @@
 
     // Go to https://dashboard.tokbox.com/ to get your OpenTok API Key and to generate
     // a test session ID and token:
-    var apiKey    = '',
-      sessionId = '',
-      token     = '';
+    var apiKey    = '45828062',
+      sessionId = '2_MX40NTgyODA2Mn5-MTU1MDcxMjExMjYxMX5SZWZFL2Y4cjNHS05XbXJieUVXWWpFNDN-UH4';
+      token     = 'T1==cGFydG5lcl9pZD00NTgyODA2MiZzaWc9NjhmYTliNzYzY2JhZjI3MjJhYmE3MWQ0NWJjNjQ5N2NlODFlOTBlYTpzZXNzaW9uX2lkPTJfTVg0ME5UZ3lPREEyTW41LU1UVTFNRGN4TWpFeE1qWXhNWDVTWldaRkwyWTRjak5IUzA1WGJYSmllVVZYV1dwRk5ETi1VSDQmY3JlYXRlX3RpbWU9MTU1MDcxMjExOCZub25jZT0wLjA5NDgwNDUyNDAzNzUxNTI3JnJvbGU9cHVibGlzaGVyJmV4cGlyZV90aW1lPTE1NTA3OTg1MTg=';
 
     // Replace this with the ID for your Chrome screen-sharing extension, which you can
     // get at chrome://extensions/:
 
-    var extensionId = '<YOUR_CHROME_EXTENSION_ID>';
+    var extensionId = 'ebenjpcfebfblapjmfmlgkciohhafmnc';
 
     // If you register your domain with the the Firefox screen-sharing whitelist, instead of using
     // a Firefox screen-sharing extension, set this to the Firefox version number, such as 36, in which
@@ -60,13 +60,13 @@
       OT.checkScreenSharingCapability(function(response) {
         console.info(response);
         if (!response.supported || response.extensionRegistered === false) {
-          alert('This browser does not support screen sharing.');
+          console.log('This browser does not support screen sharing.');
         } else if (response.extensionInstalled === false
             && (response.extensionRequired || !ffWhitelistVersion)) {
-          alert('Please install the screen-sharing extension and load this page over HTTPS.');
+          console.log('Please install the screen-sharing extension and load this page over HTTPS.');
         } else if (ffWhitelistVersion && navigator.userAgent.match(/Firefox/)
           && navigator.userAgent.match(/Firefox\/(\d+)/)[1] < ffWhitelistVersion) {
-            alert('For screen sharing, please update your version of Firefox to '
+            console.log('For screen sharing, please update your version of Firefox to '
               + ffWhitelistVersion + '.');
         } else {
           // Screen sharing is available. Publish the screen.
@@ -76,13 +76,13 @@
             { videoSource : 'screen' },
             function(error) {
               if (error) {
-                alert('Something went wrong: ' + error.message);
+                console.log('Something went wrong: ' + error.message);
               } else {
                 session.publish(
                   screenSharingPublisher,
                   function(error) {
                     if (error) {
-                      alert('Something went wrong: ' + error.message);
+                      console.log('Something went wrong: ' + error.message);
                     }
                   });
               }
